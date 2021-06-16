@@ -4,7 +4,7 @@
 	//include '../common/main_header.ht';	
 
 	// Header Core
-	include 'header.ht';
+	include 'header.html';
 
 	// Identify Device (Phone / Tablet / Computer)
 	require_once 'php/mobile_detect.php';
@@ -15,7 +15,7 @@
 	}else if($detect->isMobile()) {
 	    include 'phone.ht';
 	}else{
-		include 'computer.ht';
+		include 'computer.html';
 	}
 
 	// Information Core

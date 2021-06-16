@@ -1,0 +1,922 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>Конструкто натяжных потолков</title>
+        <meta name="description" content="Конструкто натяжных потолков">
+        <meta http-equiv="content-language" content="ru">
+        <meta name="viewport" content="width=device-width, initial-scale=1">	
+
+        <!-- Add common javascript files -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script> 
+        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.9.2.js"></script>
+        <script type="text/javascript" src="js/dom-to-image.min.js"></script>
+        <script type="text/javascript" src="js/filesaver.js"></script>
+        <script type="text/javascript" src="js/blob.js"></script>
+        <script type="text/javascript" src="js/device.js"></script>
+        <script type="text/javascript" src="js/device.identify.js"></script>
+        <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+
+        <!-- Add commom css files -->
+        <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+        <link rel="stylesheet" type="text/css" href="css/system.css" />
+
+        <!-- Loading CSS Device -->
+        <script type="text/javascript">	
+            if(device.mobile() == true ){
+                addCSS('css/mstyle.css');
+            }else if(device.tablet() == true ){
+                addCSS('css/tstyle.css');
+            }else{
+                addCSS('css/cstyle.css');
+            }
+
+            function addCSS(filename){
+                var head = document.getElementsByTagName('head')[0];
+                var style = document.createElement('link');
+                style.href = filename;
+                style.type = 'text/css';
+                style.rel = 'stylesheet';
+                head.append(style);
+            }
+        </script>
+
+        <!-- Script Common Device -->
+        <script type="text/javascript" src="js/common.js"></script>
+        
+        <script type="text/javascript">
+            jQuery(function($){
+                $("#phone").mask("+7 (999) 999-9999");
+            });
+        </script>
+
+        <!-- Loading Javascript Device -->
+        <script type="text/javascript">	
+            if(device.mobile() == true ){
+                addScript('js/mscript.js');
+            }else if(device.tablet() == true ){
+                addScript('js/tscript.js');
+            }else{
+                addScript('js/cscript.js');
+            }
+
+            function addScript(filename){
+                var head = document.getElementsByTagName('head')[0];
+                var script = document.createElement('script');
+                script.src = filename;
+                script.type = 'text/javascript';
+                head.append(script);
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">	
+
+        var id_klient = 0;
+        var main_color_reg = 0;
+        var browser_width = 0;
+        var browser_height = 0;
+        var mm_hei_koef = 0;
+        var mm_hei = 0;
+        var color_height = 0;
+
+
+
+        // Load function
+        function load_manager(){
+            browser_width = document.documentElement.clientWidth;
+            browser_height = document.documentElement.clientHeight;
+
+            if(device.mobile() == true ){
+                //if(device_const_porientation == 1){
+                    // mm_hei_koef = browser_width/900;
+                    // document.getElementById("id_main_png").style.zoom = mm_hei_koef;
+                    // mm_hei = (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
+                    // alert(mm_hei);
+
+                    // document.getElementById("id_main_edit").style.height = "364px";
+                    //color_height = browser_height - (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
+                    //document.getElementById("id_set_color_block").style.height = color_height + 'px';
+                //}else{
+                //	kit_resize(2);
+                //}
+            }  
+        }
+        document.addEventListener( "DOMContentLoaded", load_manager, false );	
+
+
+
+        // identify Onload
+        function identify_onload(){
+
+
+            browser_width = document.documentElement.clientWidth;
+            browser_height = document.documentElement.clientHeight;
+
+            if(device.mobile() == true ){
+                //if(device_const_porientation == 1){
+                    mm_hei_koef = browser_width/900;
+                    document.getElementById("id_main_png").style.zoom = mm_hei_koef;
+                    mm_hei = (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
+                    document.getElementById("id_main_edit").style.marginTop = mm_hei + "px";
+                    color_height = browser_height - (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
+                    document.getElementById("id_set_color_block_mini").style.height = color_height + 'px';
+                    document.getElementById("id_set_color_block_mini").style.bottom = '-' + color_height + 'px';
+                    document.getElementById("id_set_color_block_mini_item").style.height = (color_height - 45) + 'px';
+                //}else{
+                //	kit_resize(2);
+                //}
+            }
+
+
+
+            //browser_width = document.documentElement.clientWidth;
+            //browser_height = document.documentElement.clientHeight;
+
+            //mm_hei_koef = browser_width/900;
+            //document.getElementById("id_main_png").style.zoom = mm_hei_koef;
+
+
+            // if(device.mobile() == true){
+
+            // 	if(device_const_porientation == 1){
+            // 		mm_hei_koef = browser_width/900;
+            // 		document.getElementById("id_main_png").style.zoom = mm_hei_koef;
+            // 		mm_hei = (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef) + 15;
+            // 		document.getElementById("id_main_edit").style.marginTop = mm_hei + "px";
+            // 		color_height = browser_height - (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
+            // 		document.getElementById("id_set_color_block").style.height = color_height + 'px';
+            // 	}else{
+            // 		kit_resize(2);
+            // 	}
+            // }else if(device.tablet() == true){
+                
+            // 	if(device_const_porientation == 1){
+                    
+            // 		document.getElementById("id_header_part").style.display = "none";
+            // 		document.getElementById("id_info_product").style.display = "none";
+            // 		document.getElementById("id_footer_part").style.display = "none";
+
+            // 		document.getElementById("id_main_png").style.position = "relative";
+            // 		document.getElementById("id_main_png").style.height = "auto";
+            // 		document.getElementById("id_main_edit").style.marginTop = "15px";
+                
+
+
+
+            // 		mm_hei_koef = browser_width/900;
+            // 		document.getElementById("id_main_png").style.zoom = mm_hei_koef;
+            // 	}else{
+
+            // 	}		
+            // } 
+            // setTimeout(identify_onload_scrolltop, 1000);
+
+        }
+
+
+
+        // function identify_onload_scrolltop(){
+        // 	if(device.mobile() == true){
+        // 		$(window).scrollTop(0);
+        // 		document.getElementById("id_load_block").style.display = "none";
+        // 	}else if(device.tablet() == true){
+        // 		$(window).scrollTop(0);
+        // 		document.getElementById("id_load_block").style.display = "none";
+        // 	} 
+        // }
+
+
+
+        //Orientation function
+        function kit_resize(kit_resize_tmp){
+            //document.getElementById("id_load_block").style.display = "block";
+
+            browser_width = screen.width;
+            browser_height = screen.height;
+
+            if(device.mobile() == true ){
+                if(kit_resize_tmp == 1){
+                    document.getElementById("id_main_edit_download").style.display = "none";
+                    mm_hei_koef = browser_width/900;
+                    document.getElementById("id_main_png").style.zoom = mm_hei_koef;
+
+                    mm_hei = (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef) + 15;
+                    document.getElementById("id_main_edit").style.display = "block";
+                    document.getElementById("id_main_edit").style.marginTop = mm_hei + "px";
+                    color_height = browser_height - (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
+                    document.getElementById("id_set_color_block").style.height = color_height + 'px';
+                }else if(kit_resize_tmp == 2){
+                    document.getElementById("id_main_edit").style.display = "none";
+                    mm_hei_koef = browser_height/575;
+                    document.getElementById("id_main_png").style.zoom = mm_hei_koef;
+                    document.getElementById("id_main_edit_download").style.display = "block";
+                }
+            }else if(device.tablet() == true){
+                if(kit_resize_tmp == 4){
+                    document.getElementById("id_main_edit").style.display = "none";
+                    mm_hei_koef = browser_height/575;
+                    document.getElementById("id_main_png").style.zoom = mm_hei_koef;
+                    document.getElementById("id_main_edit_download").style.display = "block";
+                }
+            }
+            document.getElementById("id_load_block").style.display = "none";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Mobile
+        function open_color_set(tmp_main_color_reg){
+            main_color_reg = tmp_main_color_reg;
+            if(main_color_reg == 1){
+                document.getElementById("id_set_color_block_text").innerHTML = "Цвет обоев";
+            }else if(main_color_reg == 2){
+                document.getElementById("id_set_color_block_text").innerHTML = "Цвет потолка";
+            }else if(main_color_reg == 3){
+                document.getElementById("id_set_color_block_text").innerHTML = "Цвет полов";
+            }else if(main_color_reg == 4){
+                document.getElementById("id_set_color_block_text").innerHTML = "Цвет 2-го уровня";
+            }
+            document.getElementById("id_set_color_block").style.display = "block";
+            $("#id_set_color_block").animate({bottom: '0'},500, function() {
+
+            });	
+        }
+
+
+
+        function close_color_set(){
+            $("#id_set_color_block").animate({bottom: '-100%'},500, function() {
+                document.getElementById("id_set_color_block").style.display = "none";
+            });	
+        }
+
+
+
+        //Computer
+        function open_color_set_mini(tmp_main_color_reg){
+
+            if(document.getElementById("id_potolok_list_ex").style.display == "block"){
+                document.getElementById("id_potolok_list_ex").style.display = "none";
+                $("#id_potolok_example").toggleClass("oboi_example_rot");
+            }
+
+            if(document.getElementById("id_oboi_list_ex").style.display == "block"){
+                document.getElementById("id_oboi_list_ex").style.display = "none";
+                $("#id_oboi_example").toggleClass("oboi_example_rot");
+            }
+
+            document.getElementById("id_set_color_block_mini").focus();
+
+            if(main_color_reg != tmp_main_color_reg){
+                main_color_reg = tmp_main_color_reg;
+                document.getElementById("id_open_color_set_mini1").innerHTML = "";
+                document.getElementById("id_open_color_set_mini2").innerHTML = "";
+                document.getElementById("id_open_color_set_mini3").innerHTML = "";
+                document.getElementById("id_open_color_set_mini4").innerHTML = "";
+                document.getElementById("id_set_color_block_mini").classList.remove('rott');
+
+                if(device.mobile() == true ){
+                    // Mobile - open color palitra
+                        main_color_reg = tmp_main_color_reg;
+                        if(main_color_reg == 1){
+                            document.getElementById("id_set_color_block_mini_text").innerHTML = "Цвет стен";
+                        }else if(main_color_reg == 2){
+                            document.getElementById("id_set_color_block_mini_text").innerHTML = "Цвет потолка";
+                        }else if(main_color_reg == 3){
+                            document.getElementById("id_set_color_block_mini_text").innerHTML = "Цвет полов";
+                        }else if(main_color_reg == 4){
+                            document.getElementById("id_set_color_block_mini_text").innerHTML = "Цвет 2-го уровня";
+                        }
+                        document.getElementById("id_set_color_block_mini").style.display = "block";
+                        $("#id_set_color_block_mini").animate({bottom: '0'},500, function(){
+                        });	
+                }else if(device.tablet() == true ){
+                    // Tablet - open color palitra
+
+                }else{
+                    // Computer - open color palitra
+                    if(main_color_reg == 1){
+                        document.getElementById("id_set_color_block_mini").style.top = "96px";
+                        document.getElementById("id_open_color_set_mini1").innerHTML = "X";
+                        document.getElementById("id_set_color_block_mini_text").innerHTML = "Цвет стен";
+                    }else if(main_color_reg == 2){
+                        document.getElementById("id_set_color_block_mini").style.top = "194px";
+                        document.getElementById("id_open_color_set_mini2").innerHTML = "X";
+                        document.getElementById("id_set_color_block_mini_text").innerHTML = "Цвет потолка";
+                    }else if(main_color_reg == 3){
+                        document.getElementById("id_set_color_block_mini").style.top = "260px";
+                        document.getElementById("id_set_color_block_mini").classList.add('rott');
+                        document.getElementById("id_open_color_set_mini3").innerHTML = "X";
+                        document.getElementById("id_set_color_block_mini_text").innerHTML = "Цвет пола";
+                    }else if(main_color_reg == 4){
+                        document.getElementById("id_set_color_block_mini").style.top = "43px";
+                        document.getElementById("id_set_color_block_mini").classList.add('rott');
+                        document.getElementById("id_open_color_set_mini4").innerHTML = "X";
+                        document.getElementById("id_set_color_block_mini_text").innerHTML = "Цвет 2-го уровня";
+                    }
+                    document.getElementById("id_set_color_block_mini").style.display = "block";
+                }
+            }else{
+                main_color_reg = 0;
+                document.getElementById("id_set_color_block_mini").style.display = "none";
+                document.getElementById("id_open_color_set_mini1").innerHTML = "";
+                document.getElementById("id_open_color_set_mini2").innerHTML = "";
+                document.getElementById("id_open_color_set_mini3").innerHTML = "";
+                document.getElementById("id_open_color_set_mini4").innerHTML = "";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function screen_show(tmp_screen){
+            document.getElementById("id_screen_computer").style.display = "none";	
+            document.getElementById("id_screen_tablet").style.display = "none";	
+            document.getElementById("id_screen_phone").style.display = "none";	
+
+            document.getElementById("id_screen_computer_s").classList.remove("active");
+            document.getElementById("id_screen_tablet_s").classList.remove("active");
+            document.getElementById("id_screen_phone_s").classList.remove("active");
+
+            if(tmp_screen == 0){
+                document.getElementById("id_screen_computer").style.display = "block";
+                document.getElementById("id_screen_computer_s").classList.add("active");
+            }else if(tmp_screen == 1){
+                document.getElementById("id_screen_tablet").style.display = "block";
+                document.getElementById("id_screen_tablet_s").classList.add("active");
+            }else if(tmp_screen == 2){
+                document.getElementById("id_screen_phone").style.display = "block";	
+                document.getElementById("id_screen_phone_s").classList.add("active");
+            }
+        }
+
+
+
+        function open_cl(tmp_open_cl){
+            document.getElementById("id_vib1").style.background = "#ffdd55";
+            document.getElementById("id_vib2").style.background = "#ffdd55";
+            document.getElementById("id_vib3").style.background = "#ffdd55";
+
+            if(tmp_open_cl == 1){
+                document.getElementById("id_send_klient_desc").innerHTML = "Базовый";
+                document.getElementById("id_send_klient").style.left = "169px";	
+                document.getElementById("id_vib1").style.background = "#ccc";	
+            }else if(tmp_open_cl == 2){
+                document.getElementById("id_send_klient_desc").innerHTML = "Оптимальный";
+                document.getElementById("id_send_klient").style.left = "367px";	
+                document.getElementById("id_vib2").style.background = "#ccc";
+            }else if(tmp_open_cl == 3){
+                document.getElementById("id_send_klient_desc").innerHTML = "Профессиональный";
+                document.getElementById("id_send_klient").style.left = "570px";
+                document.getElementById("id_vib3").style.background = "#ccc";	
+            }
+            document.getElementById("id_send_klient").style.display = "block";
+        }
+
+
+
+        function close_cl(){
+            document.getElementById("id_send_klient").style.display = "none";	
+            document.getElementById("id_vib1").style.background = "#ffdd55";
+            document.getElementById("id_vib2").style.background = "#ffdd55";
+            document.getElementById("id_vib3").style.background = "#ffdd55";
+            document.getElementById("id_kl_name").value = "";
+            document.getElementById("id_kl_mail").value = "";
+            document.getElementById("id_kl_site").value = "";
+            document.getElementById("id_send_klient_b").innerHTML = "Отправить";
+        }
+
+
+
+        function send_za(){
+            var chet='';
+            var kl_desc_text = document.getElementById("id_send_klient_desc").innerHTML;
+            var kl_name_text = document.getElementById("id_kl_name").value;
+            var kl_email_text = document.getElementById("id_kl_mail").value;
+            var kl_site_text = document.getElementById("id_kl_site").value;
+
+            if(kl_email_text == ""){
+                alert('Введите ваш E-Mail');
+            }else{
+                document.getElementById("id_send_klient_b").innerHTML = "Отправление...";
+
+                chet='';
+                chet += "Пакет: <b>" + kl_desc_text + "</b><br /><br />";
+                chet += "Имя: <b>" + kl_name_text + "</b><br />";
+                chet += "Почта: <b>" + kl_email_text + "</b><br />";
+                chet += "Сайт: <b>" + kl_site_text + "</b><br />";
+
+                $.ajax({
+                    type: "POST",
+                    url: "php/send_klient.php",
+                    data: {'message': chet},
+                    success: function(text) {
+                        close_cl();
+                        alert(text);
+                    }
+                });
+            }	
+        }
+
+
+
+
+
+
+
+
+
+        </script>
+
+    </head>
+    <body onload="identify_onload();">
+
+        <!-- File Upload Oboi -->
+        <div style="display: none;">
+            <form action="php/oboi_upload.php" name="nameupload" method="post" target="hiddenframe" enctype="multipart/form-data">
+                <div id="uploadFile_div">
+                    <input type="file" multiple id="oboi_img" name="oboi_img" accept="image/jpeg,image/png,image/gif" onChange="javascript:add_images_upload();"/>
+                </div>
+                <input type="text" id="id_text_up1" name="text_up1"/>
+                <input type="submit" name="myupload" id="upload" value="Загрузить" />
+            </form>
+            <div id="res"></div>
+            <iframe id="hiddenframe" name="hiddenframe" style="width:0px; height:0px; border:0px"></iframe>
+        </div>
+        <!-- END File Upload Oboi -->
+
+        <!-- File Upload Potolok -->
+        <div style="display: none;">
+            <form action="php/potolok_upload.php" name="nameupload1" method="post" target="hiddenframe1" enctype="multipart/form-data">
+                <div id="uploadFile_div1">
+                    <input type="file" multiple id="potolok_img" name="potolok_img" accept="image/jpeg,image/png,image/gif" onChange="javascript:add_images_potolok_upload();"/>
+                </div>
+                <input type="text" id="id_text_up2" name="text_up2"/>
+                <input type="submit" name="myupload1" id="upload1" value="Загрузить" />
+            </form>
+            <div id="res1"></div>
+            <iframe id="hiddenframe1" name="hiddenframe1" style="width:0px; height:0px; border:0px"></iframe>
+        </div>
+        <!-- END File Upload Potolok -->
+
+
+
+
+
+        <img id="id_opp" src="">
+
+        <div style="text-align: center;">
+
+            <div id="id_main_png" class="main_png">
+                <div id="id_main_png_screen" class="main_png_block">
+
+                    <div id="id_potolok" class="potolok"></div>
+                    <div id="id_pol" class="pol"></div>
+                    <div id="id_potolok_oboi_two" class="potolok_oboi_two"></div>
+
+                    <div id="id_tw_l_img" class="tw_l tw_l_img"></div> 
+                    <div id="id_tw_l_img1" class="tw_l1 tw_l_img1"></div> 
+                
+                    <div class="potolok_level"></div>
+
+                    <div id="id_oboi1" class="oboi1"></div>
+                    <div id="id_oboi2" class="oboi2"></div>
+                    <div id="id_oboi3" class="oboi3"></div>
+                    <div id="id_oboi4" class="oboi4"></div>
+                    <div id="id_oboi5" class="oboi5"></div>
+                    <div id="id_oboi6" class="oboi6"></div>
+                    
+                    <img class="shdd" src="images/shadd.png">
+                    <img src="images/main1.png">
+
+                    <img id="id_glan" class="glan" src="images/up_img.png">
+                    <img id="id_glan1" class="glan" src="images/up_img_s.png">
+
+                    <span id="id_sv0" style="display: none;">
+                        <img id="id_sv2" class="svet2" src="images/sv.png">
+                        <img id="id_sv2-5" class="svet2-5" src="images/sv.png">
+                        <img id="id_sv3" class="svet3" src="images/sv.png">
+                        <img id="id_sv4" class="svet4" src="images/sv.png">
+                        <img id="id_sv4-5" class="svet4-5" src="images/sv.png">
+                        <img id="id_sv5" class="svet5" src="images/sv.png">
+                        <img id="id_sv2-0" class="svet2-0" src="images/sv.png">
+                        <img id="id_sv2-1" class="svet2-1" src="images/sv.png">
+                    </span>
+
+                    <span id="id_sv1" style="display: none;">
+                        <img class="svet2_light" src="images/svet_light.png">
+                        <img class="svet2-5_light" src="images/svet_light.png">
+                        <img class="svet3_light" src="images/svet_light.png">
+                        <img class="svet4_light" src="images/svet_light.png">
+                        <img class="svet4-5_light" src="images/svet_light.png">
+                        <img class="svet5_light" src="images/svet_light.png">
+                        <img class="svet2-0_light" src="images/svet_light.png">
+                        <img class="svet2-1_light" src="images/svet_light.png">
+                    </span>
+
+                    <img id="id_lust" class="lust" src="images/lust.png">
+                    <img id="id_lust1" class="lust_light" src="images/svet_light_lust.png" style="display: none;">
+
+                    <img id="id_lenta" class="lenta" src="images/lenta.png">
+
+                    <div id="id_screenshot_class" class="screenshot_class" onClick="create_screenshot();"><img src="images/icon-screenshot.png" style="vertical-align: middle;"> Сделать скриншот</div>
+                </div>
+            </div>
+
+
+            <img id="id_main_edit_download" class="main_edit_download" style="display: none;" src="images/download.png">
+                
+
+
+            <!-- Main Edit -->
+            <div id="id_main_edit" class="main_edit">
+
+                <!-- Computer version -->
+                <div>
+                    <div>
+                        <div class="upload_oboi_title upload_oboi_title1">Обои квартиры</div>
+                    </div>
+                    <div class="system_block">
+                        <div id="id_upload_oboi_oboi_example_pre" class="upload_oboi oboi_example_pre" onClick="add_images();"><span style="margin-right: 28px;">Загрузить фото обоев</span></div>
+                        <img id="id_oboi_example" class="oboi_example" src="images/icon_ar_down.png" onClick="list_ex_open();">
+                        <div id="id_oboi_list_ex" class="oboi_list_ex" style="display: none;">
+                            <div class="set_color_block_mini_text1">Примеры обоев</div>
+                            <div id="id_set_color_block_mini_close" class="set_color_block_mini_close" onClick="list_ex_open();">Закрыть</div>
+
+                            <div class="oboi_simple">
+                                <img src="images/oboi/ob_ex2.jpg" onClick="oboi_set_from_image_src('2');">
+                                <img src="images/oboi/ob_ex3.jpg" onClick="oboi_set_from_image_src('3');">
+                                <img src="images/oboi/ob_ex5.jpg" onClick="oboi_set_from_image_src('5');">
+                                <img src="images/oboi/ob_ex6.jpg" onClick="oboi_set_from_image_src('6');">
+                                <img src="images/oboi/ob_ex8.jpg" onClick="oboi_set_from_image_src('8');">
+                                <img src="images/oboi/ob_ex11.jpg" onClick="oboi_set_from_image_src('11');">
+                                <img src="images/oboi/ob_ex12.jpg" onClick="oboi_set_from_image_src('12');">
+                                <img src="images/oboi/ob_ex13.jpg" onClick="oboi_set_from_image_src('13');">
+                                <img src="images/oboi/ob_ex15.jpg" onClick="oboi_set_from_image_src('15');">
+                                <img src="images/oboi/ob_ex16.jpg" onClick="oboi_set_from_image_src('16');">
+                                <img src="images/oboi/ob_ex17.jpg" onClick="oboi_set_from_image_src('17');">
+                                <img src="images/oboi/ob_ex18.jpg" onClick="oboi_set_from_image_src('18');">
+                                <img src="images/oboi/ob_ex20.jpg" onClick="oboi_set_from_image_src('20');">
+                                <img src="images/oboi/ob_ex21.jpg" onClick="oboi_set_from_image_src('21');">
+                                <img src="images/oboi/ob_ex22.jpg" onClick="oboi_set_from_image_src('22');">
+                                <img src="images/oboi/ob_ex25.jpg" onClick="oboi_set_from_image_src('25');">
+                                <img src="images/oboi/ob_ex27.jpg" onClick="oboi_set_from_image_src('27');">
+                                <img src="images/oboi/ob_ex28.jpg" onClick="oboi_set_from_image_src('28');">
+                                <img src="images/oboi/ob_ex29.jpg" onClick="oboi_set_from_image_src('29');">
+                                <img src="images/oboi/ob_ex30.jpg" onClick="oboi_set_from_image_src('30');">
+                                <img src="images/oboi/ob_ex33.jpg" onClick="oboi_set_from_image_src('33');">
+                                <img src="images/oboi/ob_ex34.jpg" onClick="oboi_set_from_image_src('34');">
+                                <img src="images/oboi/ob_ex35.jpg" onClick="oboi_set_from_image_src('35');">
+                                <img src="images/oboi/ob_ex37.jpg" onClick="oboi_set_from_image_src('37');">
+                            </div>
+
+                            <div style="margin-top: 9px; font-size: 13px;">или <span style="border-bottom: 1px dashed #3677ab; color: #1d4775; cursor: pointer;" onClick="add_images();">Загрузите свою фотографию</span></div>
+                        </div>
+                    </div>
+
+                    <div class="system_block system_block_cursor" onClick="open_color_set_mini('1');">
+                        <div class="main_edit-title">Цвет стен</div>
+                        <div id="id_open_color_set_mini1" class="set_ccolor"></div>
+                    </div>
+            
+                </div>
+                <!-- END Computer version -->
+
+
+
+                <div>
+                    <div>
+                        <div class="upload_oboi_title" style="margin-top: 10px;">Потолок</div>
+                    </div>
+                    <div>
+                        <div id="id_upload_oboi_pot" class="upload_oboi" onClick="add_images_potolok();">Загрузить изображение</div>
+                        <div id="id_potolok_list_ex" class="oboi_list_ex" style="display: none;">
+                            <div style="margin-top: 8px; color: #737373; font-family: RobotoLight; margin-bottom: 4px;">Выберите один из примеров</div>
+                            <img src="images/potolok/ob_ex1.jpg" onClick="potolok_set_from_image_src('1');">
+                            <img src="images/potolok/ob_ex2.jpg" onClick="potolok_set_from_image_src('2');">
+                            <img src="images/potolok/ob_ex3.jpg" onClick="potolok_set_from_image_src('3');">
+                            <img src="images/potolok/ob_ex4.jpg" onClick="potolok_set_from_image_src('4');">
+                            <img src="images/potolok/ob_ex5.jpg" onClick="potolok_set_from_image_src('5');">
+                            <img src="images/potolok/ob_ex6.jpg" onClick="potolok_set_from_image_src('6');">
+                            <img src="images/potolok/ob_ex7.jpg" onClick="potolok_set_from_image_src('7');">
+                            <img src="images/potolok/ob_ex8.jpg" onClick="potolok_set_from_image_src('8');">
+                            <img src="images/potolok/ob_ex9.jpg" onClick="potolok_set_from_image_src('9');">
+                            <img src="images/potolok/ob_ex10.jpg" onClick="potolok_set_from_image_src('10');">
+                            <img src="images/potolok/ob_ex11.jpg" onClick="potolok_set_from_image_src('11');">
+                            <img src="images/potolok/ob_ex12.jpg" onClick="potolok_set_from_image_src('12');">
+                            <div style="margin-top: 9px; font-size: 13px;">или <span style="border-bottom: 1px dashed #3677ab; color: #1d4775; cursor: pointer;" onClick="add_images_potolok();">Загрузите изображение</span></div>
+                        </div>
+                    </div>
+
+                    <div class="system_block system_block_cursor" onClick="open_color_set_mini('2');">
+                        <div class="main_edit-title">Цвет потолка</div>
+                        <div id="id_open_color_set_mini2" class="set_ccolor"></div>
+                    </div>
+
+                    <div>
+                        <div class="title_gray">Материал</div>
+                        <select class="form-control" style="line-height: 2px; height: 28px; padding: 2px; font-size: 13px; width: 207px;" onClick="material(this.value)";>
+                            <option value="0">Матовый</option>
+                            <option value="1">Сатиновый</option>
+                            <option value="2">Глянцевый</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="title_gray">2-й уровень</div>
+                    </div>
+
+                    <label for="checkBox1">
+                        <div class="system_block system_block_hover" style="margin-top: 7px;">
+                            <div class="main_edit-title"><img class="dop_img" src="images/ic_two_level.png"> 2-й уровень</div>
+                            <input class="checkbox_style" id="checkBox1" type="checkbox" onClick="two_level();">
+                        </div>
+                    </label>
+
+                    <div class="system_block system_block_cursor" style="margin-top: 7px;" onClick="open_color_set_mini('4');">
+                        <div class="main_edit-title">Цвет 2-го уровня</div>
+                        <div id="id_open_color_set_mini4" class="set_ccolor"></div>
+                    </div>
+                    <div>
+                        <div class="title_gray">Дополнительно</div>
+                    </div>
+
+                    <div style="position: relative;">
+                        <label for="checkBox11">
+                            <div class="system_block system_block_hover" style="margin-top: 7px;">
+                                <div class="main_edit-title"><img class="dop_img" src="images/ic_lamp.png"> Люстра</div>
+                                <input class="checkbox_style" id="checkBox11" type="checkbox" onClick="lust();">
+                            </div>
+                        </label>
+                        <img id="id_main_edit-title_svet_lust" class="main_edit-title_svet_lust" src="images/ic_lamp.png" style="display: none;" onClick='svet_light_lust();'>
+                        <div id="id_main_edit-title_svet_lust_desc" class="main_edit-title_svet_lust_desc" style="display: none;"><span>Вкл./Выкл.</span> свет</div>
+                    </div>
+
+                    <div style="position: relative;">
+                        <label for="checkBox12">
+                            <div class="system_block system_block_hover" style="margin-top: 7px;">
+                                <div class="main_edit-title"><img class="dop_img" src="images/ic_light.png"> Светильники</div>
+                                <input class="checkbox_style" id="checkBox12" type="checkbox" onClick="svet();">
+
+                            </div>
+                        </label>
+                        <img id="id_main_edit-title_svet" class="main_edit-title_svet" src="images/ic_light.png" style="display: none;" onClick='svet_light();'>
+                        <div id="id_main_edit-title_svet_desc" class="main_edit-title_svet_desc" style="display: none;"><span>Вкл./Выкл.</span> свет</div>
+                    </div>
+
+                    <label for="checkBox13">
+                        <div class="system_block system_block_hover" style="margin-top: 7px;">
+                            <div class="main_edit-title"><img class="dop_img" src="images/ic_led.png" style="vertical-align: top;"> <div style="display: inline-block; position: relative; top: 1px;">Светодиодная<br>лента</div></div>
+                            <input class="checkbox_style" id="checkBox13" type="checkbox" onClick="lenta();">
+                        </div>
+                    </label>			
+
+
+                </div>
+
+
+                <!-- Pol core -->
+                <div>
+                    <div class="upload_oboi_title" style="margin-top: 10px;">Пол</div>
+                </div>
+                <div>
+                    <div class="system_block system_block_cursor" onClick="open_color_set_mini('3');">
+                        <div class="main_edit-title">Цвет пола</div>
+                        <div id="id_open_color_set_mini3" class="set_ccolor"></div>
+                    </div>
+                </div>
+                <!-- END Pol core -->
+
+
+
+                <!-- Computer Color Palitra -->
+                <div id="id_set_color_block_mini" class="set_color_block_mini">
+                    <div id="id_set_color_block_mini_text" class="set_color_block_mini_text"></div>
+                    <div id="id_set_color_block_mini_close" class="set_color_block_mini_close" onClick='open_color_set_mini_cl();'>Закрыть</div>
+                    <div style="position: relative;">
+                    <div class="set_color_block_item" style="background: #f5f5f5;"></div>
+                    <div class="set_color_block_item" style="background: #c3cee0;"></div>
+                    <div class="set_color_block_item" style="background: #bbcde5;"></div>
+                    <div class="set_color_block_item" style="background: #96b7d8;"></div>
+                    <div class="set_color_block_item" style="background: #779ac4;"></div>
+                    <div class="set_color_block_item" style="background: #4569b5;"></div>
+                    <div class="set_color_block_item" style="background: #0a2ea8;"></div>
+                    <div class="set_color_block_item" style="background: #6fa2e1;"></div>
+                    <div class="set_color_block_item" style="background: #3786bf;"></div>
+                    <div class="set_color_block_item" style="background: #194fb3;"></div>
+                    <div class="set_color_block_item" style="background: #0c2b7e;"></div>
+                    <div class="set_color_block_item" style="background: #08163b;"></div>
+                    <div class="set_color_block_item" style="background: #bdc8e8;"></div>
+                    <div class="set_color_block_item" style="background: #c0cbeb;"></div>
+                    <div class="set_color_block_item" style="background: #929bbc;"></div>
+                    <div class="set_color_block_item" style="background: #998fce;"></div>
+                    <div class="set_color_block_item" style="background: #b2a4e2;"></div>
+                    <div class="set_color_block_item" style="background: #9877bc;"></div>
+                    <div class="set_color_block_item" style="background: #2a246c;"></div>
+                    <div class="set_color_block_item" style="background: #566069;"></div>
+                    <div class="set_color_block_item" style="background: #835596;"></div>
+                    <div class="set_color_block_item" style="background: #692465;"></div>
+                    <div class="set_color_block_item" style="background: #692465;"></div>
+                    <div class="set_color_block_item" style="background: #cbcac6;"></div>
+                    <div class="set_color_block_item" style="background: #c4c6c5;"></div>
+                    <div class="set_color_block_item" style="background: #aeada9;"></div>
+                    <div class="set_color_block_item" style="background: #a2aebc;"></div>
+                    <div class="set_color_block_item" style="background: #818994;"></div>
+                    <div class="set_color_block_item" style="background: #536476;"></div>
+                    <div class="set_color_block_item" style="background: #000105;"></div>
+                    <div class="set_color_block_item" style="background: #ecacc7;"></div>
+                    <div class="set_color_block_item" style="background: #c11813;"></div>
+                    <div class="set_color_block_item" style="background: #bf2229;"></div>
+                    <div class="set_color_block_item" style="background: #9c0a0b;"></div>
+                    <div class="set_color_block_item" style="background: #7a0f19;"></div>
+                    <div class="set_color_block_item" style="background: #7a0f19;"></div>
+                    <div class="set_color_block_item" style="background: #d85672;"></div>
+                    <div class="set_color_block_item" style="background: #db6099;"></div>
+                    <div class="set_color_block_item" style="background: #b9527d;"></div>
+                    <div class="set_color_block_item" style="background: #c2326d;"></div>
+                    <div class="set_color_block_item" style="background: #972143;"></div>
+                    <div class="set_color_block_item" style="background: #250915;"></div>
+                    <div class="set_color_block_item" style="background: #c88e9d;"></div>
+                    <div class="set_color_block_item" style="background: #852e1d;"></div>
+                    <div class="set_color_block_item" style="background: #8e5542;"></div>
+                    <div class="set_color_block_item" style="background: #7a3a1f;"></div>
+                    <div class="set_color_block_item" style="background: #e5e0ca;"></div>
+                    <div class="set_color_block_item" style="background: #d9ad90;"></div>
+                    <div class="set_color_block_item" style="background: #dbbe96;"></div>
+                    <div class="set_color_block_item" style="background: #bb7726;"></div>
+                    <div class="set_color_block_item" style="background: #a0622f;"></div>
+                    <div class="set_color_block_item" style="background: #4b2620;"></div>
+                    <div class="set_color_block_item" style="background: #341912;"></div>
+                    <div class="set_color_block_item" style="background: #211716;"></div>
+                    <div class="set_color_block_item" style="background: #ddd0bd;"></div>
+                    <div class="set_color_block_item" style="background: #d89491;"></div>
+                    <div class="set_color_block_item" style="background: #b76057;"></div>
+                    <div class="set_color_block_item" style="background: #e8651d;"></div>
+                    <div class="set_color_block_item" style="background: #d14512;"></div>
+                    <div class="set_color_block_item" style="background: #d73d1b;"></div>
+                    <div class="set_color_block_item" style="background: #cba854;"></div>
+                    <div class="set_color_block_item" style="background: #b7841b;"></div>
+                    <div class="set_color_block_item" style="background: #c1591c;"></div>
+                    <div class="set_color_block_item" style="background: #eee5bc;"></div>
+                    <div class="set_color_block_item" style="background: #e8e08d;"></div>
+                    <div class="set_color_block_item" style="background: #e6db4d;"></div>
+                    <div class="set_color_block_item" style="background: #f8e65e;"></div>
+                    <div class="set_color_block_item" style="background: #f0d842;"></div>
+                    <div class="set_color_block_item" style="background: #f5c22b;"></div>
+                    <div class="set_color_block_item" style="background: #9dc564;"></div>
+                    <div class="set_color_block_item" style="background: #5faa4d;"></div>
+                    <div class="set_color_block_item" style="background: #21844b;"></div>
+                    <div class="set_color_block_item" style="background: #4f936e;"></div>
+                    <div class="set_color_block_item" style="background: #12583e;"></div>
+                    <div class="set_color_block_item" style="background: #074746;"></div>
+                    <div class="set_color_block_item" style="background: #8dd3d1;"></div>
+                    <div class="set_color_block_item" style="background: #5ea9a2;"></div>
+                    <div class="set_color_block_item" style="background: #10707e;"></div>
+                    <div class="set_color_block_item" style="background: #b8a78d;"></div>
+                    <div class="set_color_block_item" style="background: #bebb98;"></div>
+                    <div class="set_color_block_item" style="background: #a1a33e;"></div>
+                    <div class="set_color_block_item" style="background: #879c75;"></div>
+                    <div class="set_color_block_item" style="background: #4b5226;"></div>
+                    <div class="set_color_block_item" style="background: #cadde1;"></div>
+                    <div class="set_color_block_item" style="background: #cadde1;"></div>
+                    <div class="set_color_block_item" style="background: #92ada6;"></div>
+                    <div class="set_color_block_item" style="background: #a0d1d8;"></div>
+                    <div class="set_color_block_item" style="background: #307dab;"></div>
+                    <div class="set_color_block_item" style="background: #195a7a;"></div>
+                    </div>	
+                </div>
+                <!-- END Computer Color Palitra -->
+
+
+
+            </div>
+            <!-- End Main Edit -->
+
+
+
+
+
+            <!-- Create Screenshot -->
+            <div id="id_show_screeshot" class="show_screeshot">
+                <div id="id_load_srcc" class="load_srcc"></div>
+                <img class="show_screeshot_image" id="id_show_screeshot_img" src="">
+                <div class="show_screeshot_panel_sh"></div>
+                <div id="id_show_screeshot_panel" class="show_screeshot_panel">
+                    <div id="id_save_screenshot" class="show_screeshot_panel_item" onClick="save_screenshot();"><img src="images/icon-save.png"> Сохранить</div>
+                    <div id="id_send_screenshot" class="show_screeshot_panel_item" style="display: none;"><img src="images/icon-mail.png"> Отправить на почту (демо)</div>
+                    <img class="show_screeshot_close" src="images/icon-close.png" onClick="close_screenshot();">
+                </div>
+            </div>
+            <!-- END Create Screenshot -->
+
+
+
+            <!-- Send data EMail -->
+            <div class="send_form">
+                <div id="id_form_send_kont" class="form_send_kont">
+
+                    <img src="images/close_gray.png" class="send_close_b" onClick="open_form_send();">
+
+                    <div id="id_calc_form" class="row" style="display: none;">
+                        <div>
+                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Длина м." required="">
+                        </div>
+                        <div>
+                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Ширина м." required="">
+                        </div>
+                        <div>
+                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Углы шт." required="">
+                        </div>
+                        <div>
+                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Люстра шт." required="">
+                        </div>
+                        <div>
+                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Светильников шт." required="">
+                        </div>
+                        <div>
+                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Труб шт." required="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="id_calc_form_b" class="send_form_btn_dop" onClick="calc_open();">Открыть калькулятор</div>
+                    </div>
+
+                    <input id="id_klient_name" type="text" class="text_box_input" placeholder="Введите имя *" required="">
+                    <input id="id_klient_tel" type="text" class="text_box_input" placeholder="Введите телефон *" required="">
+                    <textarea id="id_klient_kom" name="callback.More" class="textarea_input" style="resize: none;" placeholder="Комментарий"></textarea>
+                    <div class="send_form_btn" onClick="send_screenshot();">Отправить</div>
+                    <p style="text-align: center; font-size: 13px;">Нажимая на кнопку ОТПРАВИТЬ вы <a href="#" style="color: #337ab7;">соглашаетесь с обработкой и хранением персональных данных.</a></p>
+                    <div class="send_form_btn1" onClick="open_form_send();" style="background: rgb(133, 136, 140); margin-top: 20px;">Закрыть</div>
+                </div>
+                <div id="id_send_form_btn" class="send_form_btn" onClick="open_form_send();"><img src="images/ic_send.png" style="vertical-align: middle;"> Отправить эскиз</div>
+
+            </div>	
+            <!-- END Send data EMail -->
+
+
+            <div id="id_load_block" class="load_block">
+                <img src="images/loading.gif">
+            </div>
+
+
+            <div id="id_send_form_btn_all">
+                <div>Отправление...</div>
+            </div>
+
+
+        </div>
+    </body>
+</html>

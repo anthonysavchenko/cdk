@@ -12,39 +12,15 @@
 
         <script type="text/javascript" src="js/dom-to-image.min.js"></script>
         <script type="text/javascript" src="js/filesaver.js"></script>
-
         <script type="text/javascript" src="js/blob.js"></script>
-        <script type="text/javascript" src="js/device.js"></script>
-        <script type="text/javascript" src="js/device.identify.js"></script>
-        
+
         <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 
-        <!-- Add commom css files -->
         <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-        <link rel="stylesheet" type="text/css" href="css/system.css" />
+        <link rel="stylesheet" type="text/css" href="css/system.css">
+        <link rel="stylesheet" type="text/css" href="css/cstyle.css">
 
-        <!-- Loading CSS Device -->
-        <script type="text/javascript">	
-            if(device.mobile() == true ){
-                addCSS('css/mstyle.css');
-            }else if(device.tablet() == true ){
-                addCSS('css/tstyle.css');
-            }else{
-                addCSS('css/cstyle.css');
-            }
-
-            function addCSS(filename){
-                var head = document.getElementsByTagName('head')[0];
-                var style = document.createElement('link');
-                style.href = filename;
-                style.type = 'text/css';
-                style.rel = 'stylesheet';
-                head.append(style);
-            }
-        </script>
-
-        <!-- Script Common Device -->
         <script type="text/javascript" src="js/common.js"></script>
         
         <script type="text/javascript">
@@ -57,80 +33,6 @@
 
         var id_klient = 0;
         var main_color_reg = 0;
-        var browser_width = 0;
-        var browser_height = 0;
-        var mm_hei_koef = 0;
-        var mm_hei = 0;
-        var color_height = 0;
-
-
-
-        // Load function
-        function load_manager(){
-            browser_width = document.documentElement.clientWidth;
-            browser_height = document.documentElement.clientHeight;
-        }
-        document.addEventListener( "DOMContentLoaded", load_manager, false );	
-
-
-
-        // identify Onload
-        function identify_onload(){
-
-
-            browser_width = document.documentElement.clientWidth;
-            browser_height = document.documentElement.clientHeight;
-
-            if(device.mobile() == true ){
-                //if(device_const_porientation == 1){
-                    mm_hei_koef = browser_width/900;
-                    document.getElementById("id_main_png").style.zoom = mm_hei_koef;
-                    mm_hei = (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
-                    document.getElementById("id_main_edit").style.marginTop = mm_hei + "px";
-                    color_height = browser_height - (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
-                    document.getElementById("id_set_color_block_mini").style.height = color_height + 'px';
-                    document.getElementById("id_set_color_block_mini").style.bottom = '-' + color_height + 'px';
-                    document.getElementById("id_set_color_block_mini_item").style.height = (color_height - 45) + 'px';
-                //}else{
-                //	kit_resize(2);
-                //}
-            }
-        }
-
-        //Orientation function
-        function kit_resize(kit_resize_tmp){
-            //document.getElementById("id_load_block").style.display = "block";
-
-            browser_width = screen.width;
-            browser_height = screen.height;
-
-            if(device.mobile() == true ){
-                if(kit_resize_tmp == 1){
-                    document.getElementById("id_main_edit_download").style.display = "none";
-                    mm_hei_koef = browser_width/900;
-                    document.getElementById("id_main_png").style.zoom = mm_hei_koef;
-
-                    mm_hei = (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef) + 15;
-                    document.getElementById("id_main_edit").style.display = "block";
-                    document.getElementById("id_main_edit").style.marginTop = mm_hei + "px";
-                    color_height = browser_height - (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
-                    document.getElementById("id_set_color_block").style.height = color_height + 'px';
-                }else if(kit_resize_tmp == 2){
-                    document.getElementById("id_main_edit").style.display = "none";
-                    mm_hei_koef = browser_height/575;
-                    document.getElementById("id_main_png").style.zoom = mm_hei_koef;
-                    document.getElementById("id_main_edit_download").style.display = "block";
-                }
-            }else if(device.tablet() == true){
-                if(kit_resize_tmp == 4){
-                    document.getElementById("id_main_edit").style.display = "none";
-                    mm_hei_koef = browser_height/575;
-                    document.getElementById("id_main_png").style.zoom = mm_hei_koef;
-                    document.getElementById("id_main_edit_download").style.display = "block";
-                }
-            }
-            document.getElementById("id_load_block").style.display = "none";
-        }
 
         function open_color_set_mini(tmp_main_color_reg){
 
@@ -154,7 +56,7 @@
                 document.getElementById("id_open_color_set_mini4").innerHTML = "";
                 document.getElementById("id_set_color_block_mini").classList.remove('rott');
 
-                if(device.mobile() == true ){
+                /*if(device.mobile() == true ){
                     // Mobile - open color palitra
                         main_color_reg = tmp_main_color_reg;
                         if(main_color_reg == 1){
@@ -169,10 +71,7 @@
                         document.getElementById("id_set_color_block_mini").style.display = "block";
                         $("#id_set_color_block_mini").animate({bottom: '0'},500, function(){
                         });	
-                }else if(device.tablet() == true ){
-                    // Tablet - open color palitra
-
-                }else{
+                }else{*/
                     // Computer - open color palitra
                     if(main_color_reg == 1){
                         document.getElementById("id_set_color_block_mini").style.top = "96px";
@@ -194,7 +93,7 @@
                         document.getElementById("id_set_color_block_mini_text").innerHTML = "Цвет 2-го уровня";
                     }
                     document.getElementById("id_set_color_block_mini").style.display = "block";
-                }
+                //}
             }else{
                 main_color_reg = 0;
                 document.getElementById("id_set_color_block_mini").style.display = "none";
@@ -208,7 +107,7 @@
         </script>
 
     </head>
-    <body onload="identify_onload();">
+    <body>
 
         <!-- File Upload Oboi -->
         <div style="display: none;">

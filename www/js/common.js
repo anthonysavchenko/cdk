@@ -187,9 +187,9 @@ function add_images_potolok(){
 function add_images_potolok_upload(){
   if(document.getElementById("potolok_img").files.length > 0){
     document.getElementById("id_upload_oboi_pot").innerHTML = "Загрузка...";
-    if(device.mobile() == true ){
+    /*if(device.mobile() == true ){
       document.getElementById("id_load_block").style.display = "block";
-    }
+    }*/
     document.getElementById("id_text_up2").value = id_klient;
     document.nameupload1.myupload1.click();
   }
@@ -238,15 +238,13 @@ function two_level(){
 // Select color theme ----------------------------------
 function open_color_set_mini_cl(){
 
-if(device.mobile() == true ){
-  $("#id_set_color_block_mini").animate({bottom: '-' + color_height},500, function() {
+/*if(device.mobile() == true ){
+  $("#id_set_color_block_mini").animate({bottom: '-' + 0},500, function() {
 
   }); 
-}else if(device.tablet() == true ){
-
-}else{
+}else{*/
   document.getElementById("id_set_color_block_mini").style.display = "none";
-}
+//}
 
 
   main_color_reg = 0;

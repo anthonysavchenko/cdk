@@ -9,11 +9,14 @@
         <script type="text/javascript" src="js/jquery-ui.min.js"></script> 
         <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui-1.9.2.js"></script>
+
         <script type="text/javascript" src="js/dom-to-image.min.js"></script>
         <script type="text/javascript" src="js/filesaver.js"></script>
+
         <script type="text/javascript" src="js/blob.js"></script>
         <script type="text/javascript" src="js/device.js"></script>
         <script type="text/javascript" src="js/device.identify.js"></script>
+        
         <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 
@@ -50,33 +53,6 @@
             });
         </script>
 
-        <!-- Loading Javascript Device -->
-        <script type="text/javascript">	
-            if(device.mobile() == true ){
-                addScript('js/mscript.js');
-            }else if(device.tablet() == true ){
-                addScript('js/tscript.js');
-            }else{
-                addScript('js/cscript.js');
-            }
-
-            function addScript(filename){
-                var head = document.getElementsByTagName('head')[0];
-                var script = document.createElement('script');
-                script.src = filename;
-                script.type = 'text/javascript';
-                head.append(script);
-            }
-        </script>
-
-
-
-
-
-
-
-
-
         <script type="text/javascript">	
 
         var id_klient = 0;
@@ -93,21 +69,6 @@
         function load_manager(){
             browser_width = document.documentElement.clientWidth;
             browser_height = document.documentElement.clientHeight;
-
-            if(device.mobile() == true ){
-                //if(device_const_porientation == 1){
-                    // mm_hei_koef = browser_width/900;
-                    // document.getElementById("id_main_png").style.zoom = mm_hei_koef;
-                    // mm_hei = (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
-                    // alert(mm_hei);
-
-                    // document.getElementById("id_main_edit").style.height = "364px";
-                    //color_height = browser_height - (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
-                    //document.getElementById("id_set_color_block").style.height = color_height + 'px';
-                //}else{
-                //	kit_resize(2);
-                //}
-            }  
         }
         document.addEventListener( "DOMContentLoaded", load_manager, false );	
 
@@ -134,66 +95,7 @@
                 //	kit_resize(2);
                 //}
             }
-
-
-
-            //browser_width = document.documentElement.clientWidth;
-            //browser_height = document.documentElement.clientHeight;
-
-            //mm_hei_koef = browser_width/900;
-            //document.getElementById("id_main_png").style.zoom = mm_hei_koef;
-
-
-            // if(device.mobile() == true){
-
-            // 	if(device_const_porientation == 1){
-            // 		mm_hei_koef = browser_width/900;
-            // 		document.getElementById("id_main_png").style.zoom = mm_hei_koef;
-            // 		mm_hei = (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef) + 15;
-            // 		document.getElementById("id_main_edit").style.marginTop = mm_hei + "px";
-            // 		color_height = browser_height - (parseInt(document.getElementById("id_main_png").offsetHeight) * mm_hei_koef);
-            // 		document.getElementById("id_set_color_block").style.height = color_height + 'px';
-            // 	}else{
-            // 		kit_resize(2);
-            // 	}
-            // }else if(device.tablet() == true){
-                
-            // 	if(device_const_porientation == 1){
-                    
-            // 		document.getElementById("id_header_part").style.display = "none";
-            // 		document.getElementById("id_info_product").style.display = "none";
-            // 		document.getElementById("id_footer_part").style.display = "none";
-
-            // 		document.getElementById("id_main_png").style.position = "relative";
-            // 		document.getElementById("id_main_png").style.height = "auto";
-            // 		document.getElementById("id_main_edit").style.marginTop = "15px";
-                
-
-
-
-            // 		mm_hei_koef = browser_width/900;
-            // 		document.getElementById("id_main_png").style.zoom = mm_hei_koef;
-            // 	}else{
-
-            // 	}		
-            // } 
-            // setTimeout(identify_onload_scrolltop, 1000);
-
         }
-
-
-
-        // function identify_onload_scrolltop(){
-        // 	if(device.mobile() == true){
-        // 		$(window).scrollTop(0);
-        // 		document.getElementById("id_load_block").style.display = "none";
-        // 	}else if(device.tablet() == true){
-        // 		$(window).scrollTop(0);
-        // 		document.getElementById("id_load_block").style.display = "none";
-        // 	} 
-        // }
-
-
 
         //Orientation function
         function kit_resize(kit_resize_tmp){
@@ -230,56 +132,6 @@
             document.getElementById("id_load_block").style.display = "none";
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Mobile
-        function open_color_set(tmp_main_color_reg){
-            main_color_reg = tmp_main_color_reg;
-            if(main_color_reg == 1){
-                document.getElementById("id_set_color_block_text").innerHTML = "Цвет обоев";
-            }else if(main_color_reg == 2){
-                document.getElementById("id_set_color_block_text").innerHTML = "Цвет потолка";
-            }else if(main_color_reg == 3){
-                document.getElementById("id_set_color_block_text").innerHTML = "Цвет полов";
-            }else if(main_color_reg == 4){
-                document.getElementById("id_set_color_block_text").innerHTML = "Цвет 2-го уровня";
-            }
-            document.getElementById("id_set_color_block").style.display = "block";
-            $("#id_set_color_block").animate({bottom: '0'},500, function() {
-
-            });	
-        }
-
-
-
-        function close_color_set(){
-            $("#id_set_color_block").animate({bottom: '-100%'},500, function() {
-                document.getElementById("id_set_color_block").style.display = "none";
-            });	
-        }
-
-
-
-        //Computer
         function open_color_set_mini(tmp_main_color_reg){
 
             if(document.getElementById("id_potolok_list_ex").style.display == "block"){
@@ -352,130 +204,6 @@
                 document.getElementById("id_open_color_set_mini4").innerHTML = "";
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        function screen_show(tmp_screen){
-            document.getElementById("id_screen_computer").style.display = "none";	
-            document.getElementById("id_screen_tablet").style.display = "none";	
-            document.getElementById("id_screen_phone").style.display = "none";	
-
-            document.getElementById("id_screen_computer_s").classList.remove("active");
-            document.getElementById("id_screen_tablet_s").classList.remove("active");
-            document.getElementById("id_screen_phone_s").classList.remove("active");
-
-            if(tmp_screen == 0){
-                document.getElementById("id_screen_computer").style.display = "block";
-                document.getElementById("id_screen_computer_s").classList.add("active");
-            }else if(tmp_screen == 1){
-                document.getElementById("id_screen_tablet").style.display = "block";
-                document.getElementById("id_screen_tablet_s").classList.add("active");
-            }else if(tmp_screen == 2){
-                document.getElementById("id_screen_phone").style.display = "block";	
-                document.getElementById("id_screen_phone_s").classList.add("active");
-            }
-        }
-
-
-
-        function open_cl(tmp_open_cl){
-            document.getElementById("id_vib1").style.background = "#ffdd55";
-            document.getElementById("id_vib2").style.background = "#ffdd55";
-            document.getElementById("id_vib3").style.background = "#ffdd55";
-
-            if(tmp_open_cl == 1){
-                document.getElementById("id_send_klient_desc").innerHTML = "Базовый";
-                document.getElementById("id_send_klient").style.left = "169px";	
-                document.getElementById("id_vib1").style.background = "#ccc";	
-            }else if(tmp_open_cl == 2){
-                document.getElementById("id_send_klient_desc").innerHTML = "Оптимальный";
-                document.getElementById("id_send_klient").style.left = "367px";	
-                document.getElementById("id_vib2").style.background = "#ccc";
-            }else if(tmp_open_cl == 3){
-                document.getElementById("id_send_klient_desc").innerHTML = "Профессиональный";
-                document.getElementById("id_send_klient").style.left = "570px";
-                document.getElementById("id_vib3").style.background = "#ccc";	
-            }
-            document.getElementById("id_send_klient").style.display = "block";
-        }
-
-
-
-        function close_cl(){
-            document.getElementById("id_send_klient").style.display = "none";	
-            document.getElementById("id_vib1").style.background = "#ffdd55";
-            document.getElementById("id_vib2").style.background = "#ffdd55";
-            document.getElementById("id_vib3").style.background = "#ffdd55";
-            document.getElementById("id_kl_name").value = "";
-            document.getElementById("id_kl_mail").value = "";
-            document.getElementById("id_kl_site").value = "";
-            document.getElementById("id_send_klient_b").innerHTML = "Отправить";
-        }
-
-
-
-        function send_za(){
-            var chet='';
-            var kl_desc_text = document.getElementById("id_send_klient_desc").innerHTML;
-            var kl_name_text = document.getElementById("id_kl_name").value;
-            var kl_email_text = document.getElementById("id_kl_mail").value;
-            var kl_site_text = document.getElementById("id_kl_site").value;
-
-            if(kl_email_text == ""){
-                alert('Введите ваш E-Mail');
-            }else{
-                document.getElementById("id_send_klient_b").innerHTML = "Отправление...";
-
-                chet='';
-                chet += "Пакет: <b>" + kl_desc_text + "</b><br /><br />";
-                chet += "Имя: <b>" + kl_name_text + "</b><br />";
-                chet += "Почта: <b>" + kl_email_text + "</b><br />";
-                chet += "Сайт: <b>" + kl_site_text + "</b><br />";
-
-                $.ajax({
-                    type: "POST",
-                    url: "php/send_klient.php",
-                    data: {'message': chet},
-                    success: function(text) {
-                        close_cl();
-                        alert(text);
-                    }
-                });
-            }	
-        }
-
-
-
-
-
-
-
-
 
         </script>
 

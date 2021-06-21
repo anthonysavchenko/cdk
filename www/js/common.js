@@ -465,7 +465,9 @@ function calc_open(){
 
 
 
-// Screenshot Core ----------------------------------
+/**
+ * Create popup with screenshot image
+ */
 function create_screenshot(){
   document.getElementById("id_load_srcc").innerHTML = 'Создание изображения...';
   document.getElementById("id_show_screeshot").style.display = "block";
@@ -488,6 +490,9 @@ function create_screenshot(){
   }); 
 }
 
+/**
+ * Close popup with screenshot image
+ */
 function close_screenshot(){
   document.getElementById("id_load_srcc").innerHTML = '';
   $("#id_save_screenshot").animate({bottom: '-52px'},400, function() {
@@ -496,12 +501,15 @@ function close_screenshot(){
       document.getElementById("id_show_screeshot_img").style.display = "none";
       $("#id_show_screeshot").animate({opacity: '0'},500, function() {
         document.getElementById("id_show_screeshot").style.display = "none";
-        document.getElementById("id_show_screeshot_img").src = 'none';
+        document.getElementById("id_show_screeshot_img").src = "";
       }); 
     }); 
   }); 
 }
 
+/**
+ * Save screenshot image to the server and then download it to the client
+ */
 function save_screenshot(){
   document.getElementById("id_save_screenshot").innerHTML = 'Сохранение...';
   var img_to_server = getBase64Image(document.getElementById("id_show_screeshot_img"));
@@ -525,6 +533,9 @@ var klient_name_text = "";
 var klient_tel_text = "";
 var klient_kom_text = "";
 
+/**
+ * Email screenshot image
+ */
 function send_screenshot(){
   klient_name_text = document.getElementById("id_klient_name").value;
   klient_tel_text = document.getElementById("id_klient_tel").value;
@@ -551,6 +562,9 @@ function send_screenshot(){
   }
 }
 
+/**
+ * Email screenshot image
+ */
 function send_screenshot_img(){
   var img_to_server = getBase64Image(document.getElementById("id_show_screeshot_img"));
   $.ajax({
@@ -568,29 +582,3 @@ function send_screenshot_img(){
     }
   });       
 }
-// END Screenshot Core ----------------------------------
-
-
-
-
-
-
-
-// Info pruduct ----------------------------------
-// Open info pruduct
-function info_product_open(){
-  $(window).scrollTop(0);
-  document.getElementById("id_info_product").style.display = "block";
-}
-
-function info_product_close(){
-  document.getElementById("id_info_product").style.display = "none";
-}
-// END Open info pruduct
-// END Info pruduct ----------------------------------
-
-
-
-
-
-

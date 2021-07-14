@@ -472,7 +472,6 @@ function create_screenshot(){
   document.getElementById("id_load_srcc").innerHTML = 'Создание изображения...';
   document.getElementById("id_show_screeshot").style.display = "block";
   $("#id_show_screeshot").animate({opacity: '1'},500, function() {
-    document.getElementById("id_screenshot_class").style.display = "none";
     var node = document.getElementById('id_main_png_screen');
     domtoimage.toPng(node).then(function (dataUrl){
     var node = document.getElementById('id_main_png_screen');
@@ -497,7 +496,6 @@ function close_screenshot(){
   document.getElementById("id_load_srcc").innerHTML = '';
   $("#id_save_screenshot").animate({bottom: '-52px'},400, function() {
     $("#id_show_screeshot_panel").animate({top: '-50px'},400, function() {
-      document.getElementById("id_screenshot_class").style.display = "block";
       document.getElementById("id_show_screeshot_img").style.display = "none";
       $("#id_show_screeshot").animate({opacity: '0'},500, function() {
         document.getElementById("id_show_screeshot").style.display = "none";

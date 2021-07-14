@@ -14,14 +14,13 @@
         <script type="text/javascript" src="js/filesaver.js"></script>
         <script type="text/javascript" src="js/blob.js"></script>
 
-        <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/inputmask@5.0.6/dist/inputmask.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
         <link rel="stylesheet" type="text/css" href="css/system.css">
-        <link rel="stylesheet" type="text/css" href="css/cstyle.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
 
         <script type="text/javascript" src="js/common.js"></script>
         
@@ -209,8 +208,6 @@
                     <img id="id_lust1" class="lust_light" src="images/svet_light_lust.png" style="display: none;">
 
                     <img id="id_lenta" class="lenta" src="images/lenta.png">
-
-                    <div id="id_screenshot_class" class="screenshot_class" onClick="create_screenshot();"><img src="images/icon-screenshot.png" style="vertical-align: middle;"> Сделать скриншот</div>
                 </div>
             </div>
 
@@ -535,11 +532,23 @@
                     <input id="sendForm_clientPhone" type="tel" class="text_box_input" placeholder="Телефон *" value="+7" required/>
                     <input id="sendForm_clientEmail" type="text" class="text_box_input" placeholder="Email *" required/>
                     <textarea id="sendForm_comment" name="callback.More" class="textarea_input" style="resize: none;" placeholder="Комментарий"></textarea>
-                    <div class="send_form_btn" onClick="send_screenshot();">Отправить</div>
+                    <div class="form_btn" onClick="send_screenshot();">Отправить</div>
                     <p style="text-align: center; font-size: 13px;">Нажимая на кнопку ОТПРАВИТЬ вы <a href="#" style="color: #337ab7;">соглашаетесь с обработкой и хранением персональных данных.</a></p>
                     <div class="send_form_btn1" onClick="open_form_send();" style="background: rgb(133, 136, 140); margin-top: 20px;">Закрыть</div>
                 </div>
-                <div id="id_send_form_btn" class="send_form_btn" onClick="open_form_send();"><img src="images/ic_send.png" style="vertical-align: middle;"> Отправить эскиз</div>
+                <div
+                    class="form_btn"
+                    onClick="create_screenshot();"
+                >
+                    <img
+                        src="images/icon-screenshot.png"
+                        style="vertical-align: middle;"
+                    >
+                    <span>
+                        Сделать скриншот
+                    </span>
+                </div>
+                <div id="id_send_form_btn" class="form_btn" onClick="open_form_send();"><img src="images/ic_send.png" style="vertical-align: middle;"> Отправить эскиз</div>
             </div>	
             <!-- END Send data EMail -->
 

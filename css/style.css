@@ -240,26 +240,165 @@ body{
 .svet2{
     position: absolute;
     top: 20px;
-    left: 315px;
+    left: 91px;
+    width: 36px;
+}
+
+.svet2_light{
+    width: 100px;
+    position: absolute;
+    left: 60px;
+    top: 21px;
+}
+
+.svet2-5{
+    position: absolute;
+    top: 95px;
+    left: 169px;
+    width: 33px;
+}
+
+.svet2-5_light{
+    width: 100px;
+    position: absolute;
+    left: 136px;
+    top: 98px;
 }
 
 .svet3{
     position: absolute;
-    top: 113px;
-    left: 300px;
+    top: 164px;
+    left: 240px;
+    width: 28px;
+}
+
+.svet3_light{
+    width: 100px;
+    position: absolute;
+    left: 204px;
+    top: 166px;
 }
 
 .svet4{
     position: absolute;
-    top: 118px;
-    right: 296px;
+    top: 20px;
+    right: 47px;
+    width: 36px;
+}
+
+.svet4_light{
+    width: 100px;
+    position: absolute;
+    right: 14px;
+    top: 23px;
+}
+
+.svet4-5{
+    position: absolute;
+    top: 95px;
+    right: 148px;
+    width: 33px;
+}
+
+.svet4-5_light{
+    width: 100px;
+    position: absolute;
+    right: 114px;
+    top: 98px;
 }
 
 .svet5{
     position: absolute;
-    top: 22px;
-    right: 313px;
+    top: 164px;
+    right: 240px;
+    width: 28px;
 }
+
+.svet5_light{
+    width: 100px;
+    position: absolute;
+    right: 204px;
+    top: 166px;
+}
+
+.svet2-0{
+    position: absolute;
+    top: 172px;
+    left: 502px;
+    width: 28px;
+}
+
+.svet2-0_light{
+    width: 100px;
+    position: absolute;
+    left: 466px;
+    top: 169px;
+}
+
+.svet2-1{
+    position: absolute;
+    top: 172px;
+    left: 367px;
+    width: 28px;
+}
+
+.svet2-1_light{
+    width: 100px;
+    position: absolute;
+    left: 331px;
+    top: 171px;
+}
+
+.main_edit-title_svet{
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 33px;
+    padding: 0px;
+    background: white;
+    border: 1px dashed #a2a2a2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main_edit-title_svet_desc{
+    position: absolute;
+    top: 6px;
+    left: -130px;
+    width: 116px;
+    padding: 5px 1px;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+}
+
+.main_edit-title_svet_desc.active{
+    background: #ffdd55;
+}
+
+.main_edit-title_svet_desc:after{
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    right: -18px;
+    border: 11px solid transparent;
+    border-left: 11px solid #fff;
+}
+
+.main_edit-title_svet_desc.active:after{
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    right: -18px;
+    border: 11px solid transparent;
+    border-left: 11px solid #ffdd55;
+}
+
+
 
 .lust{
     position: absolute;
@@ -268,6 +407,63 @@ body{
     width: 106px;
     display: none;
 }
+
+.lust_light {
+    width: 89px;
+    position: absolute;
+    left: 404px;
+    top: 149px;
+}
+
+.main_edit-title_svet_lust{
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 33px;
+    padding: 0px;
+    background: white;
+    border: 1px dashed #a2a2a2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main_edit-title_svet_lust_desc{
+    position: absolute;
+    top: 6px;
+    left: -130px;
+    width: 116px;
+    padding: 5px 1px;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+}
+
+.main_edit-title_svet_lust_desc.active{
+    background: #ffdd55;
+}
+
+.main_edit-title_svet_lust_desc:after{
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    right: -18px;
+    border: 11px solid transparent;
+    border-left: 11px solid #fff;
+}
+
+.main_edit-title_svet_lust_desc.active:after{
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    right: -18px;
+    border: 11px solid transparent;
+    border-left: 11px solid #ffdd55;
+}
+
 
 .lenta{
     position: absolute;
@@ -337,7 +533,7 @@ body{
 }
 
 .dop_img{
-    width: 42px; 
+    width: 37px; 
     vertical-align: middle;
 }
 
@@ -508,8 +704,8 @@ body{
     background: #fff;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 4px;
-    -webkit-box-shadow: 0 0px 12px rgba(0, 0, 0, .175);
-    box-shadow: 0 0px 12px rgba(0, 0, 0, .175);
+    -webkit-box-shadow: 0 0px 12px rgba(0, 0, 0, .575);
+    box-shadow: 0 0px 12px rgba(0, 0, 0, .575);
     text-align: center;
     padding-top: 4px;
     display: none;
@@ -582,6 +778,37 @@ body{
     transform: rotate(180deg);
 }
 
+.set_color_block_mini_text{
+    text-align: left;
+    color: #929292;
+    font-family: RobotoLight;
+    font-size: 13px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.set_color_block_mini_text1{
+    text-align: left;
+    color: #929292;
+    font-family: RobotoLight;
+    font-size: 13px;
+    margin-top: 6px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.set_color_block_mini_close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 13px;
+    background: #ffdd55;
+    padding: 1px 13px 3px 13px;
+    cursor: pointer;
+}
+
+
 #id_open_color_set_mini1, #id_open_color_set_mini2, #id_open_color_set_mini3, #id_open_color_set_mini4{
     text-align: center;
     color: #fff;
@@ -591,7 +818,7 @@ body{
     top: 0;
 }
 
-.send_form_btn{
+.form_btn {
     background: #ffdd55;
     color: #3d3c3c;
     width: 222px;
@@ -603,6 +830,12 @@ body{
     font-size: 14px;
 }
 
+.form_btn img {
+    vertical-align: middle;
+    width: 16px;
+    padding: 0 10px;
+}
+
 .send_form{
     position: relative;
     width: 300px;
@@ -611,9 +844,9 @@ body{
 
 .form_send_kont{
     position: absolute;
-    left: -16px;
-    bottom: 84px;
-    width: 325px;
+    left: 2px;
+    bottom: 49px;
+    width: 252px;
     background: #fff;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 7px;
@@ -631,7 +864,7 @@ body{
     border-bottom: 7px solid rgba(0,0,0,.2);
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    left: 159px;
+    left: 137px;
     top: initial;
     bottom: -7px;
 
@@ -649,7 +882,7 @@ body{
     border-bottom: 6px solid #FFF;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    left: 160px;
+    left: 137px;
     top: initial;
     bottom: -6px;
 
@@ -694,39 +927,26 @@ body{
     border-radius: 4px!important;
     margin-bottom: 20px!important;
     border: 1px solid #adadad!important;
+    font-family: RobotoRegular;
 }
 
 .textarea_input {
     font-size: 14px!important;
-    font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif!important;
     -moz-border-radius: 5px!important;
     -webkit-border-radius: 5px!important;
     border-radius: 4px!important;
     margin-bottom: 20px!important;
-    width: 100%!important;
-    height: 100px!important;
+    width: 96%!important;
+    height: 53px!important;
     padding-left: 7px!important;
+    max-width: 100%;
+    font-family: RobotoRegular;
 }
 
 
 
 
 /*ScreenShot Class*/
-
-.screenshot_class{
-    position: absolute;
-    bottom: 11px;
-    right: 14px;
-    background: white;
-    padding: 9px 14px;
-    color: #141414;
-    border-radius: 4px;
-    cursor: pointer;
-    -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
-    font-size: 15px;
-}
 
 .screenshot_class:after{
     content: '';
@@ -773,6 +993,7 @@ body{
     -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
     display: none;
+    max-width: 800px;
 }
 
 
@@ -935,7 +1156,7 @@ body{
     content: "";
     display: inline-block;
     position: absolute;
-    border-bottom: 6px solid #FFF;
+    border-bottom: 6px solid #fd5;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     right: 13px;

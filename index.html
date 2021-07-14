@@ -17,6 +17,8 @@
         <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/inputmask@5.0.6/dist/inputmask.min.js"></script>
+
         <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
         <link rel="stylesheet" type="text/css" href="css/system.css">
         <link rel="stylesheet" type="text/css" href="css/cstyle.css">
@@ -24,9 +26,20 @@
         <script type="text/javascript" src="js/common.js"></script>
         
         <script type="text/javascript">
-            jQuery(function($){
-                $("#phone").mask("+7 (999) 999-9999");
-            });
+            function addMask(elementId, mask) {
+                new Inputmask(mask).mask(document.getElementById(elementId));
+            }
+
+            function addMasks() {
+                addMask("sendForm_clientPhone", "+9 (999) 999-99-99");
+                addMask("sendForm_clientEmail", "email");
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', addMasks);
+            } else {
+                addMasks();
+            }
         </script>
 
         <script type="text/javascript">	
@@ -496,37 +509,37 @@
 
                     <div id="id_calc_form" class="row" style="display: none;">
                         <div>
-                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Длина м." required="">
+                            <input id="sendForm_ceilingLength" type="number" class="text_box_input" placeholder="Длина (м.)" required/>
                         </div>
                         <div>
-                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Ширина м." required="">
+                            <input id="sendForm_ceilingWidth" type="number" class="text_box_input" placeholder="Ширина (м.)" required/>
                         </div>
                         <div>
-                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Углы шт." required="">
+                            <input id="sendForm_corners" type="number" class="text_box_input" placeholder="Углы (шт.)" required/>
                         </div>
                         <div>
-                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Люстра шт." required="">
+                            <input id="sendForm_primaryLight" type="number" class="text_box_input" placeholder="Люстра (шт.)" required/>
                         </div>
                         <div>
-                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Светильников шт." required="">
+                            <input id="sendForm_secondaryLights" type="number" class="text_box_input" placeholder="Светильников (шт.)" required/>
                         </div>
                         <div>
-                            <input id="id_klient_wi" type="number" class="text_box_input" placeholder="Труб шт." required="">
+                            <input id="sendForm_tubes" type="number" class="text_box_input" placeholder="Труб (шт.)" required/>
                         </div>
                     </div>
                     <div class="row">
                         <div id="id_calc_form_b" class="send_form_btn_dop" onClick="calc_open();">Открыть калькулятор</div>
                     </div>
 
-                    <input id="id_klient_name" type="text" class="text_box_input" placeholder="Введите имя *" required="">
-                    <input id="id_klient_tel" type="text" class="text_box_input" placeholder="Введите телефон *" required="">
-                    <textarea id="id_klient_kom" name="callback.More" class="textarea_input" style="resize: none;" placeholder="Комментарий"></textarea>
+                    <input id="sendForm_clientName" type="text" class="text_box_input" placeholder="Ваше имя *" required/>
+                    <input id="sendForm_clientPhone" type="tel" class="text_box_input" placeholder="Телефон *" value="+7" required/>
+                    <input id="sendForm_clientEmail" type="text" class="text_box_input" placeholder="Email *" required/>
+                    <textarea id="sendForm_comment" name="callback.More" class="textarea_input" style="resize: none;" placeholder="Комментарий"></textarea>
                     <div class="send_form_btn" onClick="send_screenshot();">Отправить</div>
                     <p style="text-align: center; font-size: 13px;">Нажимая на кнопку ОТПРАВИТЬ вы <a href="#" style="color: #337ab7;">соглашаетесь с обработкой и хранением персональных данных.</a></p>
                     <div class="send_form_btn1" onClick="open_form_send();" style="background: rgb(133, 136, 140); margin-top: 20px;">Закрыть</div>
                 </div>
                 <div id="id_send_form_btn" class="send_form_btn" onClick="open_form_send();"><img src="images/ic_send.png" style="vertical-align: middle;"> Отправить эскиз</div>
-
             </div>	
             <!-- END Send data EMail -->
 
@@ -537,7 +550,7 @@
 
 
             <div id="id_send_form_btn_all">
-                <div>Отправление...</div>
+                <div>Отправка...</div>
             </div>
 
 

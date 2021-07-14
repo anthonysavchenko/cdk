@@ -528,36 +528,60 @@ function save_screenshot(){
   }); 
 }
 
-
-var klient_name_text = "";
-var klient_tel_text = "";
-var klient_kom_text = "";
-
 /**
  * Email screenshot image
  */
-function send_screenshot(){
-  klient_name_text = document.getElementById("id_klient_name").value;
-  klient_tel_text = document.getElementById("id_klient_tel").value;
-  klient_kom_text = document.getElementById("id_klient_kom").value;
+function send_screenshot() {
+  clientName = document.getElementById("sendForm_clientName").value;
+  clientPhone = document.getElementById("sendForm_clientPhone").value;
+  clientEmail = document.getElementById("sendForm_clientEmail").value;
+  comment = document.getElementById("sendForm_comment").value;
+  ceilingLength = document.getElementById("sendForm_ceilingLength").value;
+  ceilingWidth = document.getElementById("sendForm_ceilingWidth").value;
+  corners = document.getElementById("sendForm_corners").value;
+  primaryLight = document.getElementById("sendForm_primaryLight").value;
+  secondaryLights = document.getElementById("sendForm_secondaryLights").value;
+  tubes = document.getElementById("sendForm_tubes").value;
 
-  if(klient_name_text == ""){
-    alert('Введите имя');
-  }else{
-    if(klient_tel_text ==""){
+  if (clientName == "") {
+    alert('Введите ваше имя');
+  } else {
+    if (clientPhone =="") {
       alert('Введите телефон');
-    }else{
-      document.getElementById("id_send_screenshot").innerHTML = 'Отправка письма...';
-      document.getElementById("id_send_form_btn_all").style.display = "block";
-      document.getElementById("id_send_form_btn").innerHTML = "Отправить эскиз";
-      document.getElementById("id_send_form_btn").style.background = "#4a76a8";
-      document.getElementById("id_form_send_kont").style.display = "none";
+    } else {
+      if (clientEmail == "") {
+        alert('Введите email')
+      } else {
+        document.getElementById("id_send_screenshot").innerHTML = 'Отправка письма...';
+        document.getElementById("id_send_form_btn_all").style.display = "block";
+        document.getElementById("id_send_form_btn").innerHTML = "Отправить эскиз";
+        document.getElementById("id_send_form_btn").style.background = "#4a76a8";
+        document.getElementById("id_form_send_kont").style.display = "none";
 
-      var node = document.getElementById('id_main_png_screen');
-      domtoimage.toPng(node).then(function (dataUrl){
-        document.getElementById("id_show_screeshot_img").src = dataUrl;
-        setTimeout(send_screenshot_img, 3000);
-        })      
+        var node = document.getElementById('id_main_png_screen');
+        domtoimage.toPng(node).then(
+          function (dataUrl) {
+            document.getElementById("id_show_screeshot_img").src = dataUrl;
+            setTimeout(
+              function() {
+                send_screenshot_img(
+                  clientName,
+                  clientPhone,
+                  clientEmail,
+                  comment,
+                  ceilingLength,
+                  ceilingWidth,
+                  corners,
+                  primaryLight,
+                  secondaryLights,
+                  tubes
+                )
+              },
+              3000
+            );
+          }
+        )
+      }
     }
   }
 }
@@ -565,19 +589,49 @@ function send_screenshot(){
 /**
  * Email screenshot image
  */
-function send_screenshot_img(){
-  var img_to_server = getBase64Image(document.getElementById("id_show_screeshot_img"));
+function send_screenshot_img(
+  clientName,
+  clientPhone,
+  clientEmail,
+  comment,
+  ceilingLength,
+  ceilingWidth,
+  corners,
+  primaryLight,
+  secondaryLights,
+  tubes
+){
+  var attachment = getBase64Image(document.getElementById("id_show_screeshot_img"));
   $.ajax({
     type: 'POST',
-    url: 'php/send_screen.php',
-    data: {'id_klient': id_klient, 'img_to_server': img_to_server, 'klient_name': klient_name_text, 'klient_tel': klient_tel_text, 'klient_kom': klient_kom_text},
+    url: 'php/sendOrder.php',
+    data: {
+      'clientName': clientName,
+      'clientPhone': clientPhone,
+      'clientEmail': clientEmail,
+      'comment': comment,
+      'ceilingLength': ceilingLength,
+      'ceilingWidth': ceilingWidth,
+      'corners': corners,
+      'primaryLight': primaryLight,
+      'secondaryLights': secondaryLights,
+      'tubes': tubes,
+      'attachment': attachment,
+    },
     dataType: 'text',
     success: function(text) {
       document.getElementById("id_send_screenshot").innerHTML = '<img src="images/icon-mail.png"> Отправить на почту';
       document.getElementById("id_send_form_btn_all").style.display = "none";
-      document.getElementById("id_klient_name").value = "";
-      document.getElementById("id_klient_tel").value = ""
-      document.getElementById("id_klient_kom").value = "" 
+      document.getElementById("sendForm_clientName").value = "";
+      document.getElementById("sendForm_clientPhone").value = "+7"
+      document.getElementById("sendForm_clientEmail").value = ""
+      document.getElementById("sendForm_comment").value = ""
+      document.getElementById("sendForm_ceilingLength").value = ""
+      document.getElementById("sendForm_ceilingWidth").value = ""
+      document.getElementById("sendForm_corners").value = ""
+      document.getElementById("sendForm_primaryLight").value = ""
+      document.getElementById("sendForm_secondaryLights").value = ""
+      document.getElementById("sendForm_tubes").value = ""
       alert(text);
     }
   });       

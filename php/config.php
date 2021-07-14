@@ -11,7 +11,7 @@ return [
         'fromFriendlyName' => 'Белый Потолок',
     ],
     'ownerEmail' => [
-        'email' => 'anthony.savchenko@gmail.com',
+        'email' => 'trifonov.bp@gmail.com',
         'subject' => 'Заявка с beliy-potolok.ru из конструктора потолков',
     
         'htmlBody' =>

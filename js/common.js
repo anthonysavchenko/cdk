@@ -96,6 +96,7 @@ function oboi_set_from_image_src(img_tmp_src){
   document.getElementById("id_oboi4").style.background = "url('images/oboi/ob_ex" + img_tmp_src + ".jpg?rnd=" + Math.random() + "')";
   document.getElementById("id_oboi5").style.background = "url('images/oboi/ob_ex" + img_tmp_src + ".jpg?rnd=" + Math.random() + "')";
   document.getElementById("id_oboi6").style.backgroundImage = "url('images/oboi/ob_ex" + img_tmp_src + ".jpg?rnd=" + Math.random() + "')";
+  document.getElementById("id_oboi_list_ex").style.display = "none";
 }
 // END Oboi background example
 
@@ -259,16 +260,13 @@ $(document).ready(function() {
     if(main_color_reg == 1){
       document.getElementById("id_open_color_set_mini1").style.background = $(this).css("background-color");
       oboi_set_from_color($(this).css("background-color"));
-      document.getElementById("id_set_ccolor1").style.background = $(this).css("background-color");
     }else if(main_color_reg == 2){
       document.getElementById("id_open_color_set_mini2").style.background = $(this).css("background-color");
       document.getElementById("id_potolok").style.background = $(this).css("background-color");
       document.getElementById("id_potolok_oboi_two").style.background = 'transparent';
-      document.getElementById("id_set_ccolor2").style.background = $(this).css("background-color");
     }else if(main_color_reg == 3){
       document.getElementById("id_open_color_set_mini3").style.background = $(this).css("background-color");
       document.getElementById("id_pol").style.background = $(this).css("background-color");
-      document.getElementById("id_set_ccolor3").style.background = $(this).css("background-color");
     }else if(main_color_reg == 4){
       document.getElementById("id_tw_l_img").style.display = "block";
       document.getElementById("id_tw_l_img1").style.display = "block";
@@ -278,6 +276,7 @@ $(document).ready(function() {
       document.getElementById("id_tw_l_img").style.background = $(this).css("background-color");
       //document.getElementById("id_set_ccolor4").style.background = $(this).css("background-color");
     }
+    document.getElementById("id_set_color_block_mini").style.display = "none";
   });
 });
 // END Select color theme ----------------------------------
@@ -437,12 +436,12 @@ function open_form_send(){
     document.getElementById("id_send_form_btn").innerHTML = '<img src="images/ic_send.png" style="vertical-align: middle;"> Отправить эскиз';
     document.getElementById("id_send_form_btn").style.background = "#ffdd55";
     document.getElementById("id_send_form_btn").style.color = "#3d3c3c";
-    document.getElementById("id_form_send_kont").style.display = "none";
+    document.getElementById("sendScreenshotForm").style.display = "none";
   }else{
     document.getElementById("id_send_form_btn").innerHTML = "Закрыть";
     document.getElementById("id_send_form_btn").style.background = "#85888c";
     document.getElementById("id_send_form_btn").style.color = "#fff";
-    document.getElementById("id_form_send_kont").style.display = "block";
+    document.getElementById("sendScreenshotForm").style.display = "block";
   }
 
 }
